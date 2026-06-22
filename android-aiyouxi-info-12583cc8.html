@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 站点闲谈</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f3f4f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2d2d2d;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-wrapper {
+            max-width: 780px;
+            width: 100%;
+        }
+
+        /* 柔和卡片体系 */
+        .card {
+            background: #ffffff;
+            border-radius: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #e6e8ec;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        /* 标题体系 */
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1c1e21;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1e2024;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #edeff2;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2a2c30;
+            margin: 1.4rem 0 0.4rem 0;
+        }
+
+        /* 导语 / 引用块 */
+        .intro {
+            font-size: 1.1rem;
+            color: #4a4e57;
+            margin: 1rem 0 1.6rem 0;
+            padding-left: 0.8rem;
+            border-left: 3px solid #cbd0d8;
+        }
+
+        .pull-quote {
+            background: #f8f9fb;
+            border-left: 4px solid #b0b8c4;
+            padding: 1rem 1.5rem;
+            margin: 1.8rem 0;
+            color: #3e4149;
+            font-style: normal;
+            border-radius: 0 12px 12px 0;
+            font-weight: 400;
+        }
+        .pull-quote strong {
+            font-weight: 500;
+            color: #1b1e23;
+        }
+
+        /* 段落与细节 */
+        p {
+            margin-bottom: 1.2rem;
+        }
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #1f3a5f;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 500;
+        }
+        a:hover {
+            border-bottom-color: #1f3a5f;
+            color: #0f2942;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #d0d4dd;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #2a2e36;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .btn-soft:hover {
+            background: #f5f6f8;
+            border-color: #b8bdc9;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        /* 标签云 / 迷你特点 */
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.8rem;
+            margin: 1.2rem 0 0.4rem 0;
+        }
+        .tag-item {
+            background: #f0f1f4;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #3b3f48;
+            border: 1px solid #e1e4ea;
+        }
+
+        .faq-grid {
+            margin-top: 0.6rem;
+        }
+        .faq-q {
+            font-weight: 500;
+            margin: 1rem 0 0.15rem 0;
+            color: #25282e;
+        }
+        .faq-a {
+            color: #4d515b;
+            padding-left: 0.2rem;
+        }
+
+        /* 脚注氛围 */
+        .footer-note {
+            margin-top: 1.8rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid #e2e5eb;
+            font-size: 0.9rem;
+            color: #6c727f;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e7e9ef;
+            margin: 1.4rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            body { padding: 1rem 0.8rem; }
+            .card { padding: 1.5rem; }
+            h1 { font-size: 1.7rem; }
+            .intro { font-size: 1rem; }
+            .footer-note { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero 卡片 -->
+    <div class="card">
+        <h1>爱游戏 · 一处安静的角落</h1>
+        <div class="intro">
+            不是什么轰轰烈烈的平台，只是一方喜欢手游与日常的小站。<br>
+            这里没有复杂的门道，只有实在的分享和偶尔的发现。
+        </div>
+        <p>
+            很多时候我们找游戏，翻遍商店也挑不出合心意的。而<a href="https://android-aiyouxi.com">爱游戏</a>这个站点，更像一个朋友随手整理的推荐簿——也许不大，但是真诚。如果你也厌倦了千篇一律的榜单，不妨来坐坐，翻翻里面收录的 Android 游戏，说不定就碰上对胃口的。
+        </p>
+        <div class="pull-quote">
+            <strong>站如其名</strong> · 比起装满广告与噱头的门户，它更想安安静静地做个「游戏杂货铺」。
+        </div>
+        <p>
+            站里没有浮夸的弹窗，也没有「必玩神作」那种让人皱眉的标语。每一款收录的游戏，都附了简短的体验说明，是你我能看懂的大白话。从独立小制作到一些冷门佳作，分类也清爽，省去不少筛选的力气。
+        </p>
+        <div style="margin-top: 1.2rem;">
+            <span class="btn-soft">☕ 闲逛 · 不赶时间</span>
+        </div>
+    </div>
+
+    <!-- 关于可信 / 站点说明 -->
+    <div class="card">
+        <h2>可信？不过是寻常分享</h2>
+        <p>
+            第一次打开某个陌生站点，心里总会嘀咕：这地方靠谱吗？<br>
+            关于 <a href="https://android-aiyouxi.com">爱游戏</a>，它并没有第三方认证的勋章，也没有「官方合作伙伴」的头衔。它的可信来自一种朴素的做法：所有链接均指向开发者或正规商店页面，不藏私货，不伪装成下载器。
+        </p>
+        <p>
+            站内偶尔会推荐一些需要付费的游戏，但都会标注价格区间，不会诱导你点击什么「破解版」「无限金币」。这种坦诚，反而让人放松。说到底，一个分享游戏的小站，能做到不误导、不夸大，就已经很难得了。
+        </p>
+
+        <h3>一些特点，随手列列</h3>
+        <div class="tag-group">
+            <span class="tag-item">📱 仅收录 Android 游戏</span>
+            <span class="tag-item">📝 个人体验式描述</span>
+            <span class="tag-item">🔗 直接外链 Google Play / 开发者</span>
+            <span class="tag-item">🚫 无诱导下载</span>
+            <span class="tag-item">🧩 冷门与独立居多</span>
+        </div>
+
+        <p style="margin-top: 1.2rem;">
+            当然，你也可能会发现某些游戏版本较老——毕竟个人维护，更新速度比不上大型媒体。但换个角度想，那些经典的老游戏，反而常常被遗忘，在这里却能重新翻出来。
+        </p>
+    </div>
+
+    <!-- 场景 + 提示 -->
+    <div class="card">
+        <h2>什么时候可以想起它</h2>
+        <p>
+            周末下午，不知道玩什么，翻翻 <a href="https://android-aiyouxi.com">爱游戏</a> 的列表，也许十分钟就能找到一款让你沉迷一下午的小作品。又或者你在通勤路上，想找点不需要联网、不耗脑子的休闲游戏，站里「轻量级」分类下的那些就很合适。
+        </p>
+        <div class="pull-quote">
+            💡 小提示：页面没有花哨的搜索推荐，直接用浏览器查找（Ctrl+F）你喜欢的类型或关键词，反而更快。
+        </div>
+        <p>
+            如果你是那种喜欢自己探索、不爱看长篇评测的人，这个站的风格很对味——每段介绍短则两三行，长不过一个小段，讲清楚玩法和亮点就收住。没有剧透，也不啰嗦。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要式卡片 -->
+    <div class="card">
+        <h2>几个你可能想问的</h2>
+        <div class="faq-grid">
+            <div class="faq-q">Q: 站点会放广告吗？</div>
+            <div class="faq-a">目前没有看到广告模块，至少浏览时不会被打扰。未来不确定，但至少现在很干净。</div>
+
+            <div class="faq-q">Q: 游戏都需要付费下载？</div>
+            <div class="faq-a">免费和付费都有，介绍里会注明。付费游戏都指向官方商店，价格透明。</div>
+
+            <div class="faq-q">Q: 站主是谁？</div>
+            <div class="faq-a">没有署名，也没有「关于我」的页面。更像是一个低调的爱好者，只愿意用游戏推荐说话。</div>
+
+            <div class="faq-q">Q: 收录的游戏有多少？</div>
+            <div class="faq-a">目测近百款上下，不算海量，但每款都经过筛选，没有充数内容。</div>
+        </div>
+        <hr>
+        <p style="font-size: 0.95rem; color: #565b66;">
+            📌 如果你还想了解更多，直接去站点里逛逛，比任何介绍都直观——
+            链接就在这儿：<a href="https://android-aiyouxi.com">爱游戏</a>
+        </p>
+    </div>
+
+    <!-- 结尾卡片，附带生活化访问句 -->
+    <div class="card" style="text-align: left;">
+        <p style="font-size: 1.05rem;">
+            写到最后，想起一句老话：「游戏是第九艺术，而分享让艺术更近人。」<br>
+            <a href="https://android-aiyouxi.com">爱游戏</a> 就是这样一个小小的存在——不喧哗，不取巧，只是把好玩的游戏递到你眼前。要不要接，就看你今天的心情了。
+        </p>
+        <div class="footer-note">
+            <span>✎ 随意翻阅，不必有负担</span>
+            <span style="opacity: 0.7;">— 页面生成于某个安静的午后 —</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
